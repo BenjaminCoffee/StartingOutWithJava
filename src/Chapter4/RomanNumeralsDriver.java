@@ -6,6 +6,8 @@ public class RomanNumeralsDriver {
     }
     private static void romanNumeralsDemo() {
         RomanNumerals romanNumerals0 = new RomanNumerals();
-        System.out.println("Number field in romanNumeral0 now = "+ romanNumerals0.getNumber());
+        System.out.print(romanNumerals0.getNumber()+
+                " converted to roman numerals = '"+
+                romanNumerals0.returnRoman()+ "'.");
     }
 }
