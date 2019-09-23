@@ -16,7 +16,8 @@ public class SoftwareSales {
                 "% discount!\n"+
                 "Your grand total = "+
                 "$"+
-                applyDiscount(percentageDiscount, units);
+                applyDiscount(percentageDiscount, units)+'\n'
+                ;
     }
 
     //region Methods for calculating correct output.
