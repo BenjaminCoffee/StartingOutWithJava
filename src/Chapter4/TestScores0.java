@@ -19,8 +19,29 @@ public class TestScores0 {
     private int score;
 
     public String displayAverage() {
-        return "The average of the scores = "+
-                formatADouble(calculateAverage());
+        return " The average of the scores = "+
+                formatADouble(calculateAverage())+
+                "\n"+
+                " Your grade = "+
+                calculateGrade();
+    }
+    public char calculateGrade() {
+        double average = calculateAverage();
+
+        if ( average < 60 && average >= 0 ) {
+            return 'F';
+        }
+        else if ( average >= 60 && average < 70 ) {
+            return 'D';
+        }
+        else if ( average >= 70 && average < 80 ) {
+            return 'C';
+        }
+        else if ( average >= 80 && average < 90) {
+            return 'B';
+        }
+        else
+            return 'A';
     }
     public double calculateAverage () {
         return score/3.00;
@@ -39,10 +60,16 @@ public class TestScores0 {
         return sum;
     }
 
+    // Consider decomposing this in to two methods.
     public int promptUserAndReceiveInput(String testNumber) {
-
-        int sum = AskUserForInput.askUserForInteger(
-                "Enter the score of test #"+ testNumber);
+        int sum = 0;
+        do {
+            sum = AskUserForInput.askUserForInteger(
+                    "Enter the score of test #" + testNumber);
+            if( sum < 0 || sum > 100) {
+                System.out.println(" A valid score was not entered, please try again.");
+            }
+        }while( sum < 0 || sum > 100 );
         return sum;
     }
 
