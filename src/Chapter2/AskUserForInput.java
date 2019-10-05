@@ -4,6 +4,52 @@ import java.util.Scanner;
 
 public class AskUserForInput {
 
+    public static char askUserForChar(String userPrompt) {
+        char aChar;
+        String input;
+
+        do {
+            aChar = askForChar(userPrompt);
+            input = confirmationForChar(aChar);
+        }while(input.equalsIgnoreCase("N"));
+        System.out.println("Thank you!");
+
+        return aChar;
+    }
+
+    public static String confirmationForChar(char x) {
+        Scanner in = new Scanner(System.in);
+        String input;
+
+        do {
+            System.out.println("You entered '"+x+"'");
+            System.out.println("Press 'Y' to confirm or 'N' ro re-enter.");
+            input = in.nextLine();
+        }while(input.isEmpty() || input.isBlank() ||
+                (!(input.equalsIgnoreCase("Y")) &&
+                        !(input.equalsIgnoreCase("N"))));
+
+        return input;
+    }
+
+    public static char askForChar(String userPrompt) {
+        String aString;
+        char aChar;
+
+        Scanner in = new Scanner(System.in);
+
+        do {
+            prompt(userPrompt);
+            aString = in.nextLine();
+            aString = aString.toUpperCase();
+            aChar = aString.charAt(0);
+            if(aString.isBlank() || aString.isEmpty())
+                System.out.println("You did not enter anything...");
+        }while(aString.isEmpty() || aString.isBlank());
+
+        return aChar;
+    }
+
     /**
      * This method wraps the askForString and confirmationForString methods
      * in a do while loop.
