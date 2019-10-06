@@ -16,14 +16,73 @@ public class MobileServiceProvider {
         System.out.println(customerStatement());
     }
     public String customerStatement() {
-
         NumberFormat uSdCurrency = NumberFormat.getCurrencyInstance(Locale.US);
 
         return " Your service package = "+ getServicePackage()+ '\n'+
                 " The minutes used = "+ getMinutes()+ '\n'+
                 " Your total bill for this month = "+
-                uSdCurrency.format(handleServicePackageSelection());
+                uSdCurrency.format(handleServicePackageSelection())+ '\n'+
+
+                // This line of code was added as part of programming challenge #12 solution.
+                returnSavings();
     }
+
+
+    //region - These methods were added as part of the solution to
+    // programming challenge #12.
+    public String returnSavings() {
+        NumberFormat uSdCurrency = NumberFormat.getCurrencyInstance(Locale.US);
+
+        String statement;
+        if (willMoneyBeSavedWithDifferentPlan() == true) {
+            statement = " You could have saved " +
+                    uSdCurrency.format(
+                            handleServicePackageSelection() -
+                                    returnLowestServicePackageBill()) +
+                    " if service package " +
+                    whichServicePackageWillReturnSavings() +
+                    " had been selected.";
+        }
+        else statement = null;
+
+        return statement;
+    }
+    public char whichServicePackageWillReturnSavings() {
+        if (returnLowestServicePackageBill() == calculateBillForA()) {
+            return 'A';
+        }
+        if (returnLowestServicePackageBill() == calculateBillForB()) {
+            return  'B';
+        }
+        else return 'C';
+    }
+    public boolean willMoneyBeSavedWithDifferentPlan() {
+        if (handleServicePackageSelection() > calculateBillForA()||
+        handleServicePackageSelection() > calculateBillForB() ||
+        handleServicePackageSelection() > calculateBillForC())
+            return true;
+        else return false;
+    }
+    public double returnLowestServicePackageBill() {
+        double a = calculateBillForA();
+        double b = calculateBillForB();
+        double c = calculateBillForC();
+
+        double min = a;
+
+        if( b < min)
+            min = b;
+
+        if (c < min)
+            min = c;
+
+        return min;
+    }
+    //endregion
+
+
+
+    //region - Methods for calculating the appropriate output
     public double handleServicePackageSelection() {
         if (getServicePackage() == 'A' ||
                 getServicePackage() == 'B' ||
@@ -71,6 +130,11 @@ public class MobileServiceProvider {
 
         return ( bill + additionalChargeForMinutes );
     }
+    //endregion
+
+
+
+    //region - Methods for receiving input to the minutes field.
     public void inputMinutes() {
         setMinutes(validateInputForMinutes());
     }
@@ -88,6 +152,11 @@ public class MobileServiceProvider {
 
         return userInput;
     }
+    //endregion
+
+
+
+    //region - Methods for receiving input to the servicePackage field.
     public void inputServicePackage() {
         setServicePackage(validateInputForServicePackage());
     }
@@ -107,7 +176,11 @@ public class MobileServiceProvider {
 
         return userInput;
     }
+    //endregion
 
+
+
+    //region - Setters and getters
     public char getServicePackage() {
         return servicePackage;
     }
@@ -123,4 +196,5 @@ public class MobileServiceProvider {
     public void setMinutes(int minutes) {
         this.minutes = minutes;
     }
+    //endregion
 }
