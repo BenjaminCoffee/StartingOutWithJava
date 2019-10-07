@@ -6,7 +6,10 @@ public class MonthDaysDriver {
     }
 
     public static void monthDaysDemo() {
+        // create an address for a MonthDays object.
+        MonthDays program0;
+
         // pass the static int methods to the constructor's arguments.
-        MonthDays program0 = new MonthDays(MonthDays.askForMonth(), MonthDays.askForYear());
+        program0 = new MonthDays(MonthDays.askForMonth(), MonthDays.askForYear());
     }
 }
