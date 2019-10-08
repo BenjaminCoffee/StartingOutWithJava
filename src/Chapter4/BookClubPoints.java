@@ -32,9 +32,12 @@ public class BookClubPoints {
         else return 60;
     }
 
+    /*
     public void inputBooks() {
         setBooks(askForBooks());
     }
+
+     */
 
     public static int askForBooks() {
         int userInput;

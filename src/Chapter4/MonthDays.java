@@ -12,6 +12,12 @@ public class MonthDays {
         System.out.println(statement());
     }
 
+    // created this no args constructor to use in conjunction with
+    // a MagicDates object.
+    public MonthDays() {
+
+    }
+
     public String statement() {
         return " The month "+ getMonth()+ ", in year "+ getYear()+
                 ", contains "+ getNumberOfDays()+ " days.";
