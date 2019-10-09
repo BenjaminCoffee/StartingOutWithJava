@@ -7,8 +7,6 @@ public class HotDogCookoutDriver {
 
     public static void hotDogCookoutDemo() {
         HotDogCookout cookout0 = new HotDogCookout();
-        cookout0.setHotDogsPerPerson(10);
-        cookout0.setPeople(1);
-        System.out.println(cookout0.statement());
+        cookout0.wrapper();
     }
 }

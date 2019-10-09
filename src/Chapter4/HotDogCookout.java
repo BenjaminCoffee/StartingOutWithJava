@@ -6,6 +6,11 @@ public class HotDogCookout {
     private int people;
     private int hotDogsPerPerson;
 
+    public void wrapper() {
+        inputPeople();
+        inputHotDogsPerPerson();
+        System.out.println(statement());
+    }
     public String statement() {
         return " Amount of hot dogs needed = "+ getHotDogsNeeded() +
                 '\n'+
@@ -15,12 +20,12 @@ public class HotDogCookout {
                 '\n'+
                 " Total amount of wieners leftover = "+ calculateWienersLeftOver()+
                 '\n'+
-                " Total amount of buns leftover = "+ calculteBunsLeftOver();
+                " Total amount of buns leftover = "+ calculateBunsLeftOver();
     }
     public int calculateWienersLeftOver() {
         return ( totalWienersPurchased() - getHotDogsNeeded() );
     }
-    public int calculteBunsLeftOver() {
+    public int calculateBunsLeftOver() {
         return ( totalBunsPurchased() - getHotDogsNeeded() );
     }
     //region calculate the total amount of individual
