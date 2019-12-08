@@ -10,5 +10,4 @@ public class RoulettePocketDriver {
         // getPocketColor accepts the integer returned from 'getNumber'.
         System.out.println(game0.getPocketColor(game0.getNumber()));
     }
-
 }
