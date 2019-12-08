@@ -51,6 +51,31 @@ public class AskUserForInput {
     }
 
     /**
+     * This method will take input from the user.
+     * The method restricts the user to answering either yes or no.
+     * the method will return true for an answer of yes or
+     * false for an answer of no.
+     * @return A boolean, true or false.
+     */
+    public static boolean askUserYesOrNo(String yesOrNoQuestion) {
+        String answer;
+
+        do {
+            System.out.println(yesOrNoQuestion);
+            answer = askForString("Enter 'y' for yes or 'n' for no.");
+            if (!answer.equalsIgnoreCase("y") &&
+                    !answer.equalsIgnoreCase("n")) {
+                System.out.println("You did not enter 'y' or 'n'");
+            }
+        } while(!answer.equalsIgnoreCase("y") &&
+                !answer.equalsIgnoreCase("n"));
+
+        if(answer.equalsIgnoreCase("y"))
+            return true;
+        else return false;
+    }
+
+    /**
      * This method wraps the askForString and confirmationForString methods
      * in a do while loop.
      * The user has the option to re-enter data if they are not satisfied
