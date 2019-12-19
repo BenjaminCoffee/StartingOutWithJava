@@ -68,5 +68,15 @@ public class test {
         for(int i = 0; i < 8; i++) {
 
         }
+
+
+        /*
+         * PrintWriter object - creates a file and writes data to it.
+         *      will delete any file with that name already.
+         *
+         * FileWriter object - can add to an existing file.
+         *      will find the file with its name passed to it.
+         */
+
     }
 }
