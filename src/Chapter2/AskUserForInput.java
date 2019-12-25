@@ -216,6 +216,19 @@ public class AskUserForInput {
         return aDouble;
     }
 
+    public static int askUserForPositiveInteger(String userPrompt) {
+        String aString;
+        int anInt;
+
+        do {
+            anInt = askForPositiveInt(userPrompt);
+            aString = confirmationForInt(anInt);
+        }while(aString.equalsIgnoreCase("N"));
+        System.out.println("Thank you!");
+
+        return anInt;
+    }
+
     /**
      * This method wraps the askForInt and confirmationForInt methods
      * in a do while loop.
@@ -259,6 +272,28 @@ public class AskUserForInput {
                         !(input.equalsIgnoreCase("N"))));
 
         return input;
+    }
+
+    public static int askForPositiveInt(String userPrompt) {
+        int anInt = 0;
+        Scanner in = new Scanner(System.in);
+        do {
+            while (true) {
+                prompt(userPrompt);
+                if (in.hasNextInt()) {
+                    anInt = in.nextInt();
+                    break;
+                } else {
+                    in.nextLine();
+                    System.out.println("You did not enter an integer.");
+                }
+            }
+            if (anInt <= 0) {
+                System.out.println("You did not enter an integer greater" +
+                        " than zero.");
+            }
+        } while (anInt <= 0);
+        return anInt;
     }
 
     /**

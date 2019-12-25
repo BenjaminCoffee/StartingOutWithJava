@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 import java.util.Random;
 import java.util.Scanner;
 
-public class test {
+public class Test {
     public static void main(String[] args) throws IOException {
         Scanner in = new Scanner(System.in);
         /*
@@ -330,7 +330,8 @@ public class test {
         // if the specified directory does not exist, the program will terminate.
         if(!dirName.exists()) {
             System.out.println("The specified directory path does not exist.");
-            System.out.println("The program will now terminate.");
+            System.out.println("The program will now terminate after you press enter.");
+            in.nextInt();
             System.exit(0);
         }
 
@@ -355,7 +356,8 @@ public class test {
                             "Would you like to continue?");
             if(!response) {
                 System.out.println("You do not wish to continue");
-                System.out.println("The program will now terminate.");
+                System.out.println("The program will now terminate after pressing enter");
+                in.nextLine();
                 System.exit(0);
             }
         }
