@@ -215,6 +215,18 @@ public class AskUserForInput {
 
         return aDouble;
     }
+    public static double askUserForPositiveDouble(String userPrompt) {
+        String aString;
+        double aDouble;
+
+        do {
+            aDouble = askForPositiveDecimal(userPrompt);
+            aString = confirmationForDouble(aDouble);
+        }while(aString.equalsIgnoreCase("N"));
+        System.out.println("Thank you!");
+
+        return aDouble;
+    }
 
     public static int askUserForPositiveInteger(String userPrompt) {
         String aString;
@@ -272,6 +284,27 @@ public class AskUserForInput {
                         !(input.equalsIgnoreCase("N"))));
 
         return input;
+    }
+    public static double askForPositiveDecimal(String userPrompt) {
+        double aDouble = 0.0;
+        Scanner in = new Scanner(System.in);
+        do {
+            while (true) {
+                prompt(userPrompt);
+                if (in.hasNextDouble()) {
+                    aDouble = in.nextDouble();
+                    break;
+                } else {
+                    in.nextLine();
+                    System.out.println("You did not enter a double.");
+                }
+            }
+            if (aDouble <= 0.0) {
+                System.out.println("You did not enter a double greater" +
+                        " than zero.");
+            }
+        } while (aDouble <= 0.0);
+        return aDouble;
     }
 
     public static int askForPositiveInt(String userPrompt) {
