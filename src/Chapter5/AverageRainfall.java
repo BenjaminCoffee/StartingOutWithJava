@@ -52,7 +52,7 @@ public class AverageRainfall {
         }
         return rainfall;
     }
-    public void inputTimePeriodIYears() {
+    public void inputTimePeriodInYears() {
         setTimePeriodInYears(askForYears());
     }
 
