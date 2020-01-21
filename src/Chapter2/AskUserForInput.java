@@ -263,6 +263,32 @@ public class AskUserForInput {
         return anInt;
     }
 
+    public static int askUserForInteger(int minimum, String userPrompt) {
+        String aString;
+        int anInt;
+
+        do {
+            anInt = askForInt(minimum, userPrompt);
+            aString = confirmationForInt(anInt);
+        }while(aString.equalsIgnoreCase("N"));
+        System.out.println("Thank you!");
+
+        return anInt;
+    }
+
+    public static int askUserForInteger(int minimum, int maximum, String userPrompt) {
+        String aString;
+        int anInt;
+
+        do {
+            anInt = askForInt(minimum, maximum, userPrompt);
+            aString = confirmationForInt(anInt);
+        }while(aString.equalsIgnoreCase("N"));
+        System.out.println("Thank you!");
+
+        return anInt;
+    }
+
     /**
      * This method was designed to receive the integer returned from the
      * askForInt method.
@@ -306,6 +332,7 @@ public class AskUserForInput {
         } while (aDouble <= 0.0);
         return aDouble;
     }
+
 
     public static int askForPositiveInt(String userPrompt) {
         int anInt = 0;
@@ -352,6 +379,53 @@ public class AskUserForInput {
                 System.out.println("You did not enter an integer.");
             }
         }
+        return anInt;
+    }
+
+    public static int askForInt(int minimum, String userPrompt) {
+        int anInt = 0;
+        Scanner in = new Scanner(System.in);
+        do {
+            while (true) {
+                prompt(userPrompt);
+                if (in.hasNextInt()) {
+                    anInt = in.nextInt();
+                    break;
+                } else {
+                    in.nextLine();
+                    System.out.println("You did not enter an integer.");
+                }
+            }
+            if (anInt < minimum) {
+                System.out.println("You did not enter an integer greater" +
+                        " than or equal to the minimum integer.");
+            }
+        } while (anInt < minimum);
+        return anInt;
+    }
+    public static int askForInt(int minimum, int maximum, String userPrompt) {
+        int anInt = 0;
+        Scanner in = new Scanner(System.in);
+        do {
+            while (true) {
+                prompt(userPrompt);
+                if (in.hasNextInt()) {
+                    anInt = in.nextInt();
+                    break;
+                } else {
+                    in.nextLine();
+                    System.out.println("You did not enter an integer.");
+                }
+            }
+            if (anInt < minimum) {
+                System.out.println("You entered and integer less the minimum" +
+                        " value.");
+            }
+            if (anInt > maximum) {
+                System.out.println("You entered an integer greater than the" +
+                        "maximum value.");
+            }
+        } while (anInt < minimum || anInt > maximum);
         return anInt;
     }
 
