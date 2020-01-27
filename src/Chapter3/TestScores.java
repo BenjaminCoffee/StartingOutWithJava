@@ -3,7 +3,7 @@ package Chapter3;
 import java.text.DecimalFormat;
 
 public class TestScores {
-    private int score0;
+    private int score0; // You could use an Array to hold this information
     private int score1;
     private int score2;
 

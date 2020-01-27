@@ -1,6 +1,8 @@
 package Chapter3;
 
 public class Car {
+    private static final int MPH_INCREMENT = 5;
+    private static final int MPH_DECREMENT = 5;
     private int yearModel;
     private String make;
     private int speed;
@@ -34,12 +36,10 @@ public class Car {
     }
 
     public void accelerate() {
-        final int MPH_INCREMENT = 5;
         setSpeed(speed + MPH_INCREMENT);
     }
 
     public void brake() {
-        final int MPH_DECREMENT = 5;
         setSpeed(speed - MPH_DECREMENT);
     }
 

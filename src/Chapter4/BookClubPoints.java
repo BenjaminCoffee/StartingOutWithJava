@@ -9,7 +9,7 @@ public class BookClubPoints {
         this.books = books;
     }
     public String statement() {
-        if(getBooks() != 1)
+        if (getBooks() != 1)
         return " You have purchased "+
                 getBooks()+ " books and earned a total of "+
                 getPoints()+ " points.";
@@ -21,7 +21,7 @@ public class BookClubPoints {
     }
 
     public int getPoints() {
-        if(getBooks() == 0)
+        if (getBooks() == 0)
             return 0;
         else if (getBooks() == 1)
             return 5;
@@ -50,7 +50,7 @@ public class BookClubPoints {
             if(userInput < 0) {
                 System.out.println("The number may not be negative.");
             }
-        }while(userInput < 0);
+        } while(userInput < 0);
 
         return userInput;
     }

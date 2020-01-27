@@ -8,10 +8,11 @@ public class AskUserForInput {
         char aChar;
         String input;
 
+        // FYI: `do while` loops are good to know, but in my experience not used very often
         do {
             aChar = askForChar(userPrompt);
             input = confirmationForChar(aChar);
-        }while(input.equalsIgnoreCase("N"));
+        } while (input.equalsIgnoreCase("N"));
         System.out.println("Thank you!");
 
         return aChar;
@@ -25,7 +26,7 @@ public class AskUserForInput {
             System.out.println("You entered '"+x+"'");
             System.out.println("Press 'Y' to confirm or 'N' ro re-enter.");
             input = in.nextLine();
-        }while(input.isEmpty() || input.isBlank() ||
+        } while (input.isBlank() || // `isBlank` Returns true if the string is empty or contains only white space codepoints. Therefore you don't need to also have `isEmpty`
                 (!(input.equalsIgnoreCase("Y")) &&
                         !(input.equalsIgnoreCase("N"))));
 
@@ -43,9 +44,9 @@ public class AskUserForInput {
             aString = in.nextLine();
             aString = aString.toUpperCase();
             aChar = aString.charAt(0);
-            if(aString.isBlank() || aString.isEmpty())
+            if (aString.isBlank()) // `isBlank` Returns true if the string is empty or contains only white space codepoints. Therefore you don't need to also have `isEmpty`
                 System.out.println("You did not enter anything...");
-        }while(aString.isEmpty() || aString.isBlank());
+        } while (aString.isBlank());
 
         return aChar;
     }
@@ -67,12 +68,11 @@ public class AskUserForInput {
                     !answer.equalsIgnoreCase("n")) {
                 System.out.println("You did not enter 'y' or 'n'");
             }
-        } while(!answer.equalsIgnoreCase("y") &&
+        } while (!answer.equalsIgnoreCase("y") &&
                 !answer.equalsIgnoreCase("n"));
 
-        if(answer.equalsIgnoreCase("y"))
-            return true;
-        else return false;
+        // No need for `if/else` statements to return boolean value when the returning the value of `equalsIgnoreCase` already does that for you
+        return answer.equalsIgnoreCase("y");
     }
 
     /**
@@ -92,7 +92,7 @@ public class AskUserForInput {
         do {
             aString = askForString(userPrompt);
             input = confirmationForString(aString);
-        }while(input.equalsIgnoreCase("N"));
+        } while (input.equalsIgnoreCase("N"));
         System.out.println("Thank you!");
 
         return aString;
@@ -114,9 +114,7 @@ public class AskUserForInput {
             System.out.println("You entered '"+x+"'");
             System.out.println("Press 'Y' to confirm or 'N' ro re-enter.");
             input = in.nextLine();
-        }while(input.isEmpty() || input.isBlank() ||
-                (!(input.equalsIgnoreCase("Y")) &&
-                        !(input.equalsIgnoreCase("N"))));
+        } while(inputInvalid(input));
 
         return input;
     }
@@ -136,9 +134,10 @@ public class AskUserForInput {
         do {
             prompt(userPrompt);
             aString = in.nextLine();
-            if (aString.isBlank() || aString.isEmpty())
+            if (aString.isBlank()) {
                 System.out.println("You did not enter anything...");
-        }while(aString.isEmpty() || aString.isBlank());
+            }
+        } while (aString.isBlank());
 
         return aString;
     }
@@ -160,7 +159,7 @@ public class AskUserForInput {
         do {
             aDouble = askForDouble(userPrompt);
             aString = confirmationForDouble(aDouble);
-        }while(aString.equalsIgnoreCase("N"));
+        } while (aString.equalsIgnoreCase("N"));
         System.out.println("Thank you!");
 
         return aDouble;
@@ -182,9 +181,7 @@ public class AskUserForInput {
             System.out.println("You entered '"+x+"'");
             System.out.println("Press 'Y' to confirm or 'N' ro re-enter.");
             input = in.nextLine();
-        }while(input.isEmpty() || input.isBlank() ||
-                (!(input.equalsIgnoreCase("Y")) &&
-                        !(input.equalsIgnoreCase("N"))));
+        } while (inputInvalid(input));
 
         return input;
     }
@@ -201,7 +198,7 @@ public class AskUserForInput {
         double aDouble = 0;
         Scanner in = new Scanner(System.in);
 
-        while(true) {
+        while (true) {
             prompt(userPrompt);
             if (in.hasNextDouble()) {
                 aDouble = in.nextDouble();
@@ -232,7 +229,7 @@ public class AskUserForInput {
         do {
             anInt = askForInt(userPrompt);
             aString = confirmationForInt(anInt);
-        }while(aString.equalsIgnoreCase("N"));
+        } while(aString.equalsIgnoreCase("N"));
         System.out.println("Thank you!");
 
         return anInt;
@@ -254,9 +251,7 @@ public class AskUserForInput {
             System.out.println("You entered '"+x+"'");
             System.out.println("Press 'Y' to confirm or 'N' ro re-enter.");
             input = in.nextLine();
-        }while(input.isEmpty() || input.isBlank() ||
-                (!(input.equalsIgnoreCase("Y")) &&
-                        !(input.equalsIgnoreCase("N"))));
+        } while (inputInvalid(input));
 
         return input;
     }
@@ -273,7 +268,7 @@ public class AskUserForInput {
         int anInt = 0;
         Scanner in = new Scanner(System.in);
 
-        while(true) {
+        while (true) {
             prompt(userPrompt);
             if (in.hasNextInt()) {
                 anInt = in.nextInt();
@@ -293,6 +288,15 @@ public class AskUserForInput {
      */
     public static void prompt(String prompt) {
         System.out.println(prompt);
+    }
+
+    /**
+     * Helper method for determining if input is invalid. Methods like this are convenient because if your logic for
+     * determining validity ever changes, you just have to change it here (once) instead of every place you copied it.
+     * @return
+     */
+    public static boolean inputInvalid() {
+        return input.isBlank() || (!(input.equalsIgnoreCase("Y")) && !(input.equalsIgnoreCase("N")))
     }
 
     /*

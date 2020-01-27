@@ -11,22 +11,25 @@ public class RestaurantSelector {
 
         System.out.println("You following restaurants may accommodate your party:");
         int i;
-        for(i=0; i<restaurants.length; i++) {
+        for (i = 0; i < restaurants.length; i++) {
             if (restaurants[i] == true) {
-                if(i == 0) {
-                    System.out.println(" "+returnBurgers());
-                }
-                if(i == 1) {
-                    System.out.println(" "+returnPizza());
-                }
-                if(i == 2) {
-                    System.out.println(" "+returnCafe());
-                }
-                if(i == 3) {
-                    System.out.println(" "+returnItalian());
-                }
-                if(i == 4) {
-                    System.out.println(" "+returnKitchen());
+                // Switch statements can be easier to read than a long string of `if` statements
+                switch (i) {
+                    case 0:
+                        System.out.println(" " + returnBurgers());
+                        break;
+                    case 1:
+                        System.out.println(" " + returnPizza());
+                        break;
+                    case 2:
+                        System.out.println(" " + returnCafe());
+                        break;
+                    case 3:
+                        System.out.println(" " + returnItalian());
+                        break;
+                    case 4:
+                        System.out.println(" " + returnKitchen());
+                        break;
                 }
             }
         }
@@ -48,7 +51,7 @@ public class RestaurantSelector {
             pizza = false;
             italian = false;
         }
-        if(isGlutenFree()) {
+        if (isGlutenFree()) {
             burgers = false;
             italian = false;
         }
@@ -56,6 +59,7 @@ public class RestaurantSelector {
         boolean[] arr = {burgers, pizza, cafe, italian, kitchen};
         return arr;
     }
+
     /*
     public String configureStatement() {
         String statement = "";
@@ -74,21 +78,27 @@ public class RestaurantSelector {
         setVegan(askForDietaryRestriction("Is anybody vegan?"));
         setGlutenFree(askForDietaryRestriction("Is anybody gluten free?"));
     }
+
     public String returnKitchen() {
         return "The Chefs Kitchen.";
     }
+
     public String returnItalian() {
         return "Mama's Fine Italian";
     }
+
     public String returnCafe() {
         return "Corner Cafe.";
     }
+
     public String returnPizza() {
         return "Main Street Pizza Joint.";
     }
+
     public String returnBurgers() {
         return "Joe's Gourmet Burgers.";
     }
+
     public boolean askForDietaryRestriction(String question) {
         return AskUserForInput.askUserYesOrNo(question);
     }

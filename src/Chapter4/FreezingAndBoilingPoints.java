@@ -13,19 +13,19 @@ public class FreezingAndBoilingPoints {
     public String displaySubstances() {
         String conclusion = " Substances that will freeze at your temperature: \n";
 
-        if(isEthylFreezing(getTemperature())== true)
+        if (isEthylFreezing(getTemperature())== true)
             conclusion = conclusion + " Ethyl Aclohol \n";
 
-        if(isOxygenFreezing(getTemperature()) == true)
+        if (isOxygenFreezing(getTemperature()) == true)
             conclusion = conclusion + " Oxygen \n";
 
-        if(isWaterFreezing(getTemperature()) == true)
+        if (isWaterFreezing(getTemperature()) == true)
             conclusion = conclusion + " Water \n";
 
         conclusion = conclusion + "\n";
         conclusion = conclusion + " Substances that will boil at your temperature: \n";
 
-        if(isEthylBoiling(getTemperature()) == true)
+        if (isEthylBoiling(getTemperature()) == true)
             conclusion = conclusion + " Ethyl Alcohol \n";
 
         if(isOxygenBoiling(getTemperature()) == true)

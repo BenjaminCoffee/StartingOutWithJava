@@ -28,6 +28,10 @@ public class TestScores0 {
     public char calculateGrade() {
         double average = calculateAverage();
 
+        // This check I'm adding is a little over the top, but it covers one use case that would fail here
+        if (average < 0) {
+            throw new IllegalStateException("Average is a negative value!")
+        }
         if ( average < 60 && average >= 0 ) {
             return 'F';
         }

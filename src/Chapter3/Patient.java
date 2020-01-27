@@ -1,15 +1,15 @@
 package Chapter3;
 
 public class Patient {
-    private String fName;
-    private String mName;
-    private String lName;
+    private String firstName; // Use more expressive variable name so when you come back to this clas after not seeing it for a long time it will be easier to relearn
+    private String middleName;
+    private String lastName;
 
-    private String sAddress;
+    private String streetAddress;
     private String city;
     private String state;
-    private int zCode;
-    private String pNumber;
+    private int zipCode;
+    private String phoneNumber;
 
     private String eContactNamePhone;
 
@@ -22,47 +22,47 @@ public class Patient {
                    int zCode,
                    String pNumber,
                    String eContactNamePhone) {
-        this.fName = fName;
-        this.mName = mName;
-        this.lName = lName;
-        this.sAddress = sAddress;
+        this.firstName = fName;
+        this.middleName = mName;
+        this.lastName = lName;
+        this.streetAddress = sAddress;
         this.city = city;
         this.state = state;
-        this.zCode = zCode;
-        this.pNumber = pNumber;
+        this.zipCode = zCode;
+        this.phoneNumber = pNumber;
         this.eContactNamePhone = eContactNamePhone;
     }
 
-    public String getfName() {
-        return fName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setfName(String fName) {
-        this.fName = fName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getmName() {
-        return mName;
+    public String getMiddleName() {
+        return middleName;
     }
 
-    public void setmName(String mName) {
-        this.mName = mName;
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
     }
 
-    public String getlName() {
-        return lName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setlName(String lName) {
-        this.lName = lName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getsAddress() {
-        return sAddress;
+    public String getStreetAddress() {
+        return streetAddress;
     }
 
-    public void setsAddress(String sAddress) {
-        this.sAddress = sAddress;
+    public void setStreetAddress(String streetAddress) {
+        this.streetAddress = streetAddress;
     }
 
     public String getCity() {
@@ -81,20 +81,20 @@ public class Patient {
         this.state = state;
     }
 
-    public int getzCode() {
-        return zCode;
+    public int getZipCode() {
+        return zipCode;
     }
 
-    public void setzCode(int zCode) {
-        this.zCode = zCode;
+    public void setZipCode(int zipCode) {
+        this.zipCode = zipCode;
     }
 
-    public String getpNumber() {
-        return pNumber;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setpNumber(String pNumber) {
-        this.pNumber = pNumber;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String geteContactNamePhone() {
@@ -108,14 +108,14 @@ public class Patient {
     @Override
     public String toString() {
         return " Patient:" + "\n"+
-                "  First Name = "+ getfName()+ "\n"+
-                "  Middle Name = "+ getmName()+ "\n"+
-                "  Last Name = "+ getlName()+ "\n"+
-                "  Street Address = "+ getsAddress()+ "\n"+
+                "  First Name = "+ getFirstName()+ "\n"+
+                "  Middle Name = "+ getMiddleName()+ "\n"+
+                "  Last Name = "+ getLastName()+ "\n"+
+                "  Street Address = "+ getStreetAddress()+ "\n"+
                 "  City = "+ getCity()+ "\n"+
                 "  State = "+ getState()+ "\n"+
-                "  ZIP Code = "+ getzCode()+ "\n"+
-                "  Phone number = "+ getpNumber()+ "\n"+
+                "  ZIP Code = "+ getZipCode()+ "\n"+
+                "  Phone number = "+ getPhoneNumber()+ "\n"+
                 "  Emergency Contact Name and Number = "+ geteContactNamePhone();
     }
 }

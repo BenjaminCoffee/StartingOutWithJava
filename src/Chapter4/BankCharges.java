@@ -77,10 +77,10 @@ public class BankCharges {
         int userAnswer = 0;
         do {
             userAnswer = receiveAndReturnAnswer();
-            if(userAnswer < 0) {
+            if (userAnswer < 0) {
                 System.out.println("The checks used field may not be negative.");
             }
-        }while(userAnswer < 0);
+        } while(userAnswer < 0);
         return userAnswer;
     }
     /**

@@ -2,6 +2,7 @@ package Chapter2;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
+import java.lang.*;
 
 public class FormatOutput {
 
@@ -48,7 +49,7 @@ public class FormatOutput {
      * it will format the double to 2 decimal spaces.
      * @param x - The double to be formatted.
      */
-    public static void formatDouble0(double x) {
+    public static void formatDoubleTo2DecimalPlaces(double x) { // Try to make method names that are descriptive and give good insight into their functionality
         System.out.printf("%,.2f", x);
     }
 
@@ -58,7 +59,7 @@ public class FormatOutput {
      * It will round the decimal to 1 space.
      * @param x - The double to be formatted
      */
-    public static void formatDouble1(double x) {
+    public static void formatDoubleTo10PlacesWith1DecimalPlace(double x) { // Try to make method names that are descriptive and give good insight into their functionality
         System.out.printf("%10.1f", x);
     }
 
@@ -69,7 +70,7 @@ public class FormatOutput {
      * It will round the decimal to 1 space.
      * @param x - The double to be formatted
      */
-    public static void formatDouble2(double x) {
+    public static void formatDoubleTo8PlacesWithLeadingZerosWith1DecimalPlace(double x) { // Try to make method names that are descriptive and give good insight into their functionality
         System.out.printf("%08.1f", x);
     }
 
@@ -149,7 +150,8 @@ public class FormatOutput {
         int cookies = x;
         int serving = 10;
         int calPerServing = 300;
-        double caloriesConsumed = cookies * (serving * calPerServing)/bag;
+        // Although you don't have to in this case, I like that you have parenthesis around `service * calPerServing`. I like to make math operations as explicit as possible
+        double caloriesConsumed = cookies * (serving * calPerServing) / bag;
         return caloriesConsumed;
     }
 
@@ -193,7 +195,7 @@ public class FormatOutput {
         System.out.print("The sale price = $" + x + "\n" +
                 "The State sales tax = $" + x * stateSaleTax + "\n" +
                 "The County sales tax = $" + x * countySaleTax + "\n");
-        System.out.printf("The total transaction amount = $%.2f", ((x*stateSaleTax) + (x*countySaleTax) + (x)));
+        System.out.printf("The total transaction amount = $%.2f", ((x*stateSaleTax) + (x * countySaleTax) + x));
     }
 
     //#9. Miles-per-Gallon
@@ -206,7 +208,7 @@ public class FormatOutput {
      * @return miles divided by gallons
      */
     public static double milesPerGallon(double milesDriven, double gallonsConsumed) {
-        return milesDriven/ gallonsConsumed;
+        return milesDriven / gallonsConsumed;
     }
 
     //#10. Test Average
@@ -231,7 +233,7 @@ public class FormatOutput {
             score = in.nextDouble();
             total = total + score;
             i++;
-        }while(i <= 3);
+        } while (i <= 3);
 
         return total / 3;
     }
@@ -247,11 +249,11 @@ public class FormatOutput {
         Scanner in = new Scanner(System.in);
         int males = 0;
         int females = 0;
-        int i=0;
+        int i = 0;
         String gender = "";
         double total = 0;
 
-        while(i < 2) {
+        while (i < 2) {
             if (i == 0) {
                 gender = "Males";
             }
@@ -259,14 +261,14 @@ public class FormatOutput {
                 gender = "Females";
             }
             System.out.println("Please enter the amount of " + gender + ":");
-            while(!in.hasNextInt()) {
+            while (!in.hasNextInt()) {
                 System.out.println("That is not a number, please try again.");
                 in.next();
             }
-            if(i==0) {
+            if (i == 0) {
                 males = in.nextInt();
             }
-            if(i==1) {
+            if (i == 1) {
                 females = in.nextInt();
             }
 
@@ -297,7 +299,7 @@ public class FormatOutput {
             System.out.println("Please enter your favorite city: ");
             city = in.nextLine();
 
-            while(city.isEmpty()) {
+            while (city.isEmpty()) {
                 System.out.println("You did not type anything, please try again.");
                 System.out.println("Please enter your favorite city: ");
                 city = in.nextLine();
@@ -307,14 +309,14 @@ public class FormatOutput {
             System.out.println("Is This correct? Press 'Y' or 'N'.");
             confirmation = in.nextLine();
 
-            while(confirmation.isEmpty()) {
+            while (confirmation.isEmpty()) {
                 System.out.println("You did not type anything, please try again.");
                 System.out.println("You entered '"+ city + "'.");
                 System.out.println("Is This correct? Press 'Y' or 'N'.");
                 confirmation = in.nextLine();
             }
 
-        }while(confirmation.equalsIgnoreCase("N"));
+        } while (confirmation.equalsIgnoreCase("N"));
 
         System.out.println("Thank you!");
         System.out.println("So, "+ city + " is your favorite city. Great!");
@@ -357,7 +359,7 @@ public class FormatOutput {
                 confirmation = in.next();
             } while(!confirmation.equalsIgnoreCase("Y") &&
                     !confirmation.equalsIgnoreCase("N"));
-        }while(tab < 0 || confirmation.equalsIgnoreCase("N"));
+        } while(tab < 0 || confirmation.equalsIgnoreCase("N"));
 
        System.out.println("So, the bill = "+ currency.format(tab)+ "', yikes!.");
        System.out.println("The appropriate tip = "+currency.format(tab*TAB_TIP));
@@ -405,8 +407,8 @@ public class FormatOutput {
        final double CUPS_FLOUR = 2.75;
        double percentageConversion;
 
-       percentageConversion = (numberOfCookies/BASE_COOKIE_AMOUNT);
-        System.out.println("You are making "+ (percentageConversion*100)+ "%"+ " of the original recipe.");
+       percentageConversion = (numberOfCookies / BASE_COOKIE_AMOUNT);
+        System.out.println("You are making "+ (percentageConversion * 100)+ "%"+ " of the original recipe.");
         System.out.println("This will call for:");
         System.out.println(CUPS_SUGAR * percentageConversion+ " cups of sugar.");
         System.out.println(CUPS_BUTTER * percentageConversion+ " cups of butter.");
@@ -423,7 +425,7 @@ public class FormatOutput {
     public static void consumerPercenage() {
         final int CUSTOMERS_SURVEYED = 15000;
         final double PURCHASED_ONE_OR_MORE_PERCENTAGE = 0.18;
-        final double CUSTOMERS_PREFERING_CITRUS = (CUSTOMERS_SURVEYED*0.58) *
+        final double CUSTOMERS_PREFERING_CITRUS = (CUSTOMERS_SURVEYED * 0.58) *
                 (PURCHASED_ONE_OR_MORE_PERCENTAGE);
 
         System.out.println(CUSTOMERS_SURVEYED * PURCHASED_ONE_OR_MORE_PERCENTAGE+
@@ -539,18 +541,37 @@ public class FormatOutput {
         //Capitalize the proper nouns using the functions we wrote below.
         //Prepend the appropriate articles 'a' or 'an' before certain nouns
         //using the aOrAn function.
-        story = "There once was a goober named "+ capitalizeFirstLetter(name)+ ".\n"+
-                capitalizeFirstLetter(name)+ " was "+ age+ " years old.\n"+
-                capitalizeFirstLetter(name)+ " moved to " + capitalizeFirstLetter(city)+
-                " after graduating from "+ capitalizeFirstLetter(college)+ " college.\n"+
-                "Soon after finding work as "+ aOrAn(profession)+ ", "+
-                capitalizeFirstLetter(name)+ " was able to save a large "+
-                "sum of money.\n"+
-                "With their newly acquired wealth, "+ capitalizeFirstLetter(name)+
-                                    //aOrAn function used here
-                " was able to purchase "+ aOrAn(animal)+ ".\n"+
-                capitalizeFirstLetter(name)+ " named the "+ animal+
-                ", "+ capitalizeFirstLetter(petName)+ "."+ "\nThe end : )";
+
+        // You can use a `StringBuilder` when building really long strings. Sometimes it makes things a little clearer.
+        StringBuilder story = new StringBuilder();
+        story.append("There once was a goober named ");
+        story.append(capitalizeFirstLetter(name));
+        story.append(".\n");
+        story.append(capitalizeFirstLetter(name));
+        story.append(" was ");
+        story.append(age);
+        story.append(" years old.\n");
+        story.append(capitalizeFirstLetter(name));
+        story.append(" moved to ");
+        story.append(capitalizeFirstLetter(city));
+        story.append(" after graduating from ");
+        story.append(capitalizeFirstLetter(college));
+        story.append(" college.\n");
+        story.append("Soon after finding work as ");
+        story.append(aOrAn(profession));
+        story.append(", ");
+        story.append(capitalizeFirstLetter(name));
+        story.append(" was able to save a large sum of money.\n\"With their newly acquired wealth, ");
+        story.append(capitalizeFirstLetter(name));
+        story.append(" was able to purchase ");
+        story.append(aOrAn(animal));
+        story.append(".\n");
+        story.append(capitalizeFirstLetter(name));
+        story.append(" named the ");
+        story.append(animal);
+        story.append(", ");
+        story.append(capitalizeFirstLetter(petName));
+        story.append(".\nThe end : )");
 
         return story;
     }
@@ -567,7 +588,7 @@ public class FormatOutput {
         do {
             System.out.println(prompt);
             strVar = in.nextLine();
-        } while (strVar.isEmpty() || strVar.isBlank());
+        } while (strVar.isBlank());
 
         System.out.println();
         System.out.println("You entered '" + strVar + "', is that correct?");
@@ -586,10 +607,7 @@ public class FormatOutput {
         do {
             System.out.println("Press 'Y' or 'N'.");
             confirmation = in.nextLine();
-        } while ((confirmation.isEmpty() || confirmation.isBlank())
-                ||
-                (!confirmation.equalsIgnoreCase("Y") &&
-                        !confirmation.equalsIgnoreCase("N")));
+        } while (confirmation.isBlank()) || (!confirmation.equalsIgnoreCase("Y") && !confirmation.equalsIgnoreCase("N")));
 
         return confirmation;
     }
