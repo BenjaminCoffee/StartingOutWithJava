@@ -12,7 +12,7 @@ public class BodyMassIndex {
                 calculateWeightStatement();
     }
     public String calculateWeightStatement() {
-        if(returnBodyMassIndex() > 0) {
+        if (returnBodyMassIndex() > 0) {
             final double OPTIMAL_BMI_MIN = 18.5;
             final double OPTIMAL_BMI_MAX = 25.0;
 

@@ -41,9 +41,11 @@ public class WifiTroubleshooting {
         System.out.println(terminationMsg());
         createScannerForUserInteraction();
     }
+
     public void allowUserToPressEnter() {
         createScannerForUserInteraction();
     }
+
     public void createScannerForUserInteraction() {
         Scanner in = new Scanner(System.in);
         in.nextLine();
@@ -54,19 +56,24 @@ public class WifiTroubleshooting {
     public String terminationMsg() {
         return "Great! Press enter to exit the program.";
     }
+
     public String routerIsBrokenMsg() {
         return "Get a new router.";
     }
+
     public String moveRouterMsg() {
         return "Move the router to a new location and try to connect.";
     }
+
     public String checkTheCablesMsg() {
         return "Make sure the cables between the router & modem" +
                 " are plugged in firmly";
     }
+
     public String rebootRouterMsg() {
         return "Reboot the router and try to connect.";
     }
+
     public String rebootComputerMsg() {
         return "Reboot the computer and try to connect.";
     }
@@ -76,22 +83,20 @@ public class WifiTroubleshooting {
     public boolean isTheIssueFixed() {
         return receiveYesOrNo(returnYesOrNo());
     }
+
     public boolean receiveYesOrNo(String yesOrNo) {
-        if (yesOrNo.equalsIgnoreCase("yes")) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return yesOrNo.equalsIgnoreCase("yes");
     }
+
     public String returnYesOrNo() {
         return askYesOrNo();
     }
+
     public String askYesOrNo() {
         String response;
         do {
             response = AskUserForInput.askForString("Did that fix the connection?");
-            if(!response.equalsIgnoreCase("yes") &&
+            if (!response.equalsIgnoreCase("yes") &&
                     !response.equalsIgnoreCase("no")) {
                 System.out.println("You must answer 'yes' or 'no'...");
             }

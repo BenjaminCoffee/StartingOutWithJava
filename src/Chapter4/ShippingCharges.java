@@ -14,11 +14,11 @@ public class ShippingCharges {
     //region Displaying the fields and calculations of charges.
     public String statement() {
         NumberFormat format = NumberFormat.getCurrencyInstance(Locale.US);
-        return " Your item weight in kilograms = "+
-                getWeight()+'\n'+
-                " The distance to be shipped in miles = "+
-                getDistance()+'\n'+
-                " Your total charges = "+
+        return " Your item weight in kilograms = " +
+                getWeight() + '\n' +
+                " The distance to be shipped in miles = " +
+                getDistance() + '\n' +
+                " Your total charges = " +
                 format.format(applyCharges());
     }
     //endregion
@@ -27,23 +27,24 @@ public class ShippingCharges {
     //region Methods for calculating the shipping charges
     // based on the weight and the distance shipped per 500 miles.
     public double applyCharges() {
-        return ( calculateRateFromDistance() * calculateRateFromWeight() );
+        return (calculateRateFromDistance() * calculateRateFromWeight());
     }
+
     public double calculateRateFromDistance() {
-        double distanceCharge = getDistance()/500;
-        double extraDistanceCharge = getDistance()%500;
-        if(extraDistanceCharge == 0)
+        double distanceCharge = getDistance() / 500;
+        double extraDistanceCharge = getDistance() % 500;
+        if (extraDistanceCharge == 0)
             return distanceCharge;
         else return ++distanceCharge;
     }
 
     public double calculateRateFromWeight() {
 
-        if ( (getWeight() > 0) && (getWeight() <= 2) )
+        if ((getWeight() > 0) && (getWeight() <= 2))
             return 1.10;
-        else if ( (getWeight() > 2) && (getWeight() <= 6) )
+        else if ((getWeight() > 2) && (getWeight() <= 6))
             return 2.20;
-        else if ( (getWeight() > 6) && (getWeight() <= 10) )
+        else if ((getWeight() > 6) && (getWeight() <= 10))
             return 3.70;
         else return 4.80;
     }
@@ -54,6 +55,7 @@ public class ShippingCharges {
     public void inputWeight() {
         setWeight(askForWeight());
     }
+
     public int askForWeight() {
         int userAnswer = 0;
         do {
@@ -62,9 +64,10 @@ public class ShippingCharges {
                 System.out.println("The weight of the item may not be less" +
                         " than 0.");
             }
-        }while(userAnswer < 0);
+        } while (userAnswer < 0);
         return userAnswer;
     }
+
     public String promptWeightInput() {
         return "Enter the weight of the item.";
     }
@@ -79,21 +82,21 @@ public class ShippingCharges {
         int userAnswer = 0;
         do {
             userAnswer =
-            AskUserForInput.askUserForInteger(promptDistanceInput());
-            if(userAnswer < 0) {
+                    AskUserForInput.askUserForInteger(promptDistanceInput());
+            if (userAnswer < 0) {
                 System.out.println("The distance for the item to be shipped" +
                         " may not be less than zero.");
                 System.out.println("Please try again.");
             }
-        }while(userAnswer<0);
+        } while (userAnswer < 0);
         return userAnswer;
     }
-    public String promptDistanceInput(){
+
+    public String promptDistanceInput() {
         return "Enter the shipping distance in miles.";
     }
     //endregion
     //endregion
-
 
 
     //region accessors and mutators

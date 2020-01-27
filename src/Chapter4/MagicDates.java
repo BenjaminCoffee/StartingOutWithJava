@@ -1,6 +1,7 @@
 package Chapter4;
 
 import Chapter2.AskUserForInput;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -16,7 +17,7 @@ public class MagicDates {
 
     }
 
-    public MagicDates(int month, int year, int day ) {
+    public MagicDates(int month, int year, int day) {
         this.month = month;
         this.year = year;
         this.day = day;
@@ -24,20 +25,21 @@ public class MagicDates {
 
     public String statement() {
 
-        String aString = getMonth()+ "/"+ getDay()+ "/"+ getYear();
+        String aString = getMonth() + "/" + getDay() + "/" + getYear();
 
-        if(isMagic()) {
+        if (isMagic()) {
             aString = aString + " is a magic date!";
-        }
-        else aString = aString+ " is not a magic date :(";
+        } else aString = aString + " is not a magic date :(";
 
         return aString;
     }
+
     public boolean isMagic() {
-        if( (getDay() * getMonth()) == (getYear() % 100) )
+        if ((getDay() * getMonth()) == (getYear() % 100))
             return true;
         else return false;
     }
+
     public void inputDays() {
         setDay(askForDay());
     }
@@ -48,13 +50,13 @@ public class MagicDates {
         do {
             userInput =
                     AskUserForInput.askUserForInteger(
-                            "Please enter a day between 1 and "+maxNumOfDays
+                            "Please enter a day between 1 and " + maxNumOfDays
                     );
-            if(userInput < 0 || userInput > maxNumOfDays) {
-                System.out.println("The day must fall between "+
-                        "1 and "+ maxNumOfDays);
+            if (userInput < 0 || userInput > maxNumOfDays) {
+                System.out.println("The day must fall between " +
+                        "1 and " + maxNumOfDays);
             }
-        }while(userInput < 0 || userInput > maxNumOfDays);
+        } while (userInput < 0 || userInput > maxNumOfDays);
 
         return userInput;
     }

@@ -19,32 +19,27 @@ public class MonthDays {
     }
 
     public String statement() {
-        return " The month "+ getMonth()+ ", in year "+ getYear()+
-                ", contains "+ getNumberOfDays()+ " days.";
+        return " The month " + getMonth() + ", in year " + getYear() +
+                ", contains " + getNumberOfDays() + " days.";
     }
+
     public int getNumberOfDays() {
-        if(getMonth() == 2) {
-            if(isItALeapYear() == true) {
+        final int month = getMonth();
+        if (month == 2) {
+            if (isItALeapYear() == true) {
                 return 29;
-            }
-            else return 28;
-        }
-        else if (
-                getMonth() == 4 ||
-                getMonth() == 6 ||
-                getMonth() == 9 ||
-                getMonth() == 11)
-        {
+            } else return 28;
+        } else if (
+                month == 4 ||
+                        month == 6 ||
+                        month == 9 ||
+                        month == 11) {
             return 30;
-        }
-        else return 31;
+        } else return 31;
     }
+
     public boolean isItALeapYear() {
-
-        if(getYear() % 4 == 0)
-        return true;
-
-        else return false;
+        return getYear() % 4 == 0
     }
 
     //region - Methods to input to fields.
@@ -61,14 +56,15 @@ public class MonthDays {
                     AskUserForInput.askUserForInteger(
                             "Please enter a number for the year:"
                     );
-            if(userInput < 1) {
+            if (userInput < 1) {
                 System.out.println("That is not a valid entry, please try again.");
             }
-        }while(userInput < 1);
+        } while (userInput < 1);
 
         return userInput;
 
     }
+
     public void inputMonth() {
         setMonth(askForMonth());
     }
@@ -81,12 +77,12 @@ public class MonthDays {
 
             userInput =
                     AskUserForInput.askUserForInteger(
-                    "Please enter a number for the month (1 - 12):"
-            );
-            if(userInput < 1 || userInput > 12) {
+                            "Please enter a number for the month (1 - 12):"
+                    );
+            if (userInput < 1 || userInput > 12) {
                 System.out.println("That is not a valid entry, please try again.");
             }
-        }while(userInput < 1 || userInput > 12);
+        } while (userInput < 1 || userInput > 12);
 
         return userInput;
 

@@ -1,7 +1,9 @@
 package Chapter3;
 
+import java.lang.Math.*;
+
 public class Circle {
-    private final double PI = 3.14159;
+    private final double PI = Math.PI;
     private double radius;
 
     public double getCircumference() {

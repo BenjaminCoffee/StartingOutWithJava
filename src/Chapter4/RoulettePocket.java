@@ -61,9 +61,11 @@ public class RoulettePocket {
     public String returnBlack() {
         return "Black";
     }
+
     public String returnRed() {
         return "Red";
     }
+
     public String returnGreen() {
         return "Green";
     }

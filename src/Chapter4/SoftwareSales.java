@@ -11,12 +11,12 @@ public class SoftwareSales {
 
         int percentageDiscount = caclulateDiscount(units);
 
-        return "Your order has been allotted a "+
-                percentageDiscount+
-                "% discount!\n"+
-                "Your grand total = "+
-                "$"+
-                applyDiscount(percentageDiscount, units)+'\n'
+        return "Your order has been allotted a " +
+                percentageDiscount +
+                "% discount!\n" +
+                "Your grand total = " +
+                "$" +
+                applyDiscount(percentageDiscount, units) + '\n'
                 ;
     }
 
@@ -26,27 +26,26 @@ public class SoftwareSales {
 
         if (numOfUnits >= 10 && numOfUnits <= 19) {
             percentage = 20;
-        }else if(numOfUnits > 19 && numOfUnits <= 49) {
+        } else if (numOfUnits > 19 && numOfUnits <= 49) {
             percentage = 30;
-        }
-        else if(numOfUnits > 49 && numOfUnits <= 99) {
+        } else if (numOfUnits > 49 && numOfUnits <= 99) {
             percentage = 40;
-        }
-        else percentage = 50;
+        } else percentage = 50;
 
         return percentage;
     }
 
     public double applyDiscount(double discountRate, int units) {
         // Turn the whole percentage number in to a decimal.
-        discountRate = discountRate/100.00;
+        discountRate = discountRate / 100.00;
 
         double total = calculateTotal(units);
 
-        total = ( (total) - (total * discountRate) );
+        total = ((total) - (total * discountRate));
 
         return total;
     }
+
     public double calculateTotal(int units) {
         final double pricePerUnit = 99.00;
         return (units * pricePerUnit);
@@ -63,9 +62,10 @@ public class SoftwareSales {
                         "The amount of software packages sold may not be negative");
                 System.out.println("Please try again.");
             }
-        }while( anInt < 0 );
+        } while (anInt < 0);
         setUnitsSold(anInt);
     }
+
     public int promptUserAndReturnInput() {
         return AskUserForInput.askUserForInteger(
                 "Please enter the amount of software packages sold."

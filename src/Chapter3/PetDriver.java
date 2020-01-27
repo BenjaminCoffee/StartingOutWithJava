@@ -50,6 +50,6 @@ public class PetDriver {
                             " year old " +
                             pet0.getType()
             );
-        }while(confirmation.equalsIgnoreCase("n"));
+        } while (confirmation.equalsIgnoreCase("n"));
     }
 }

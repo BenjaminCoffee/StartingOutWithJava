@@ -110,7 +110,7 @@ public class FatGram {
                 System.out.println("You may not enter a negative number...");
                 System.out.println("Please try again:");
             }
-        }while(userAnswer < 0);
+        } while(userAnswer < 0);
         return userAnswer;
     }
     //endregion

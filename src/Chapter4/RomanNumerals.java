@@ -8,11 +8,13 @@ public class RomanNumerals {
     public RomanNumerals() {
         validateInput();
     }
+
     public String returnRoman() {
         return convertToRoman(getNumber());
     }
+
     public String convertToRoman(int anInt) {
-        switch (anInt){
+        switch (anInt) {
             case 1:
                 return "I";
             case 2:
@@ -36,18 +38,20 @@ public class RomanNumerals {
         }
         return "Error";
     }
+
     public void validateInput() {
         int input = receiveUserInput();
 
-        if(input > 0 && input <= 10) {
+        if (input > 0 && input <= 10) {
             setNumber(input);
-        }
-        else System.out.println("You did not enter a number between 1 and 10.");
+        } else System.out.println("You did not enter a number between 1 and 10.");
     }
-    public int receiveUserInput () {
+
+    public int receiveUserInput() {
         return AskUserForInput.askUserForInteger(promptForNumInput());
     }
-    public String promptForNumInput () {
+
+    public String promptForNumInput() {
         return "Please enter a number between 1 and 10, inclusive.";
     }
 
