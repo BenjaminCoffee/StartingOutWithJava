@@ -40,7 +40,7 @@ public class DepositAndWithdrawalFiles {
 
         // add the monthly interest to the balance.
         account0.addMonthlyInterest();
-        
+
         System.out.println(account0.getBalance());
 
     }
