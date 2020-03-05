@@ -6,6 +6,6 @@ public class CentigradeToFahrenheitTableDriver {
         CentigradeToFahrenheitTable table1 = new CentigradeToFahrenheitTable();
 
         System.out.println(table0.calculateTableToTwentyDegrees());
-        
+
     }
 }
