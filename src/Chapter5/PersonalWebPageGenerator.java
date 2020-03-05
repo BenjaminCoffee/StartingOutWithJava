@@ -22,7 +22,9 @@ public class PersonalWebPageGenerator {
                 "personalWebPage.html"
         );
 
+        // pass the html template string to the print method.
         toFile.print(htmlTemplate());
+        // we must close the PrintWriter object for anything to work.
         toFile.close();
     }
 
