@@ -3,6 +3,14 @@ package Chapter5;
 public class CentigradeToFahrenheitTable {
     private double centigrade;
 
+
+    public CentigradeToFahrenheitTable() {
+
+    }
+
+    public CentigradeToFahrenheitTable(double centigrade) {
+        setCentigrade(centigrade);
+    }
     public String calculateTableToTwentyDegrees() {
 
         // create a string builder object
@@ -31,5 +39,9 @@ public class CentigradeToFahrenheitTable {
 
     public void setCentigrade(double centigrade) {
         this.centigrade = centigrade;
+    }
+
+    public CentigradeToFahrenheitTable copy() {
+        return new CentigradeToFahrenheitTable(centigrade);
     }
 }
