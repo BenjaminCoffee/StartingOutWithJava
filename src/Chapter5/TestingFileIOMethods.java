@@ -14,7 +14,7 @@ public class TestingFileIOMethods {
         PrintWriter createAndWriteToTestDotTxt =
                 HelpfulMethodsForFileIO.createNewFileAndWriteToIt
                 ("C:\\Users\\benja\\IdeaProjects" +
-                                "\\StartingOutWithJava\\TextFiles\\Chapter5",
+                                "\\StartingOutWithJava\\ChapterSpecificFiles\\Chapter5",
                         "test.txt");
         createAndWriteToTestDotTxt.println("What up?");
         createAndWriteToTestDotTxt.close();
@@ -23,8 +23,8 @@ public class TestingFileIOMethods {
         PrintWriter appendToTestingFileAppendingMethodDotTxt =
                 HelpfulMethodsForFileIO.appendToExistingFile(
                         "C:\\Users\\benja\\IdeaProjects" +
-                                "\\StartingOutWithJava\\TextFiles\\Chapter5" +
-                                "\\testingFileAppendingMethod");
+                                "\\StartingOutWithJava\\ChapterSpecificFiles\\Chapter5" +
+                                "\\testingFileAppendingMethod.txt");
         appendToTestingFileAppendingMethodDotTxt.println("This line should" +
                 " be appended to the bottom.");
         appendToTestingFileAppendingMethodDotTxt.close();
@@ -35,7 +35,7 @@ public class TestingFileIOMethods {
                 HelpfulMethodsForFileIO.
                         returnScannerToReadFromSpecifiedFile(
                                 "C:\\Users\\benja\\IdeaProjects" +
-                                        "\\StartingOutWithJava\\TextFiles" +
+                                        "\\StartingOutWithJava\\ChapterSpecificFiles" +
                                         "\\Chapter5\\numberList.txt");
         System.out.println(readFromFile.nextLine());
     }

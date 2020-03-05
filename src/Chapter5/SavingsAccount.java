@@ -25,7 +25,7 @@ public class SavingsAccount {
         double sumOfDeposits = 0;
         double sumOfWithDrawals = 0;
         for (int i = 1; i <= months; i++) {
-            System.out.println("For month "+ months+ ":");
+            System.out.println("For month "+ i + ":");
             double deposit = SavingsAccount.AskForDepositStatic();
             account.setBalance(account.getBalance() + deposit);
             sumOfDeposits = sumOfDeposits + deposit;

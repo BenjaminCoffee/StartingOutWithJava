@@ -326,7 +326,7 @@ public class Test {
         // create a file object to specify a folder.
         File dirName = new File(
                 "C:\\Users\\benja\\IdeaProjects" +
-                        "\\StartingOutWithJava\\TextFiles\\Chapter5");
+                        "\\StartingOutWithJava\\ChapterSpecificFiles\\Chapter5");
         // if the specified directory does not exist, the program will terminate.
         if(!dirName.exists()) {
             System.out.println("The specified directory path does not exist.");

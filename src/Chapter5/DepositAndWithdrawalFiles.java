@@ -7,14 +7,14 @@ public class DepositAndWithdrawalFiles {
     public static void accountDemo() throws IOException {
         SavingsAccount account0 = new SavingsAccount(500);
 
-        // set the anual interest rate field
+        // set the annual interest rate field
         account0.setAnnualInterestRate(.02);
 
         // create a scanner equipped to read from the specified file.
         Scanner inFile =
                 HelpfulMethodsForFileIO.returnScannerToReadFromSpecifiedFile(
                         "C:\\Users\\benja\\IdeaProjects\\StartingOutWithJava" +
-                                "\\TextFiles\\Chapter5\\deposits.txt"
+                                "\\ChapterSpecificFiles\\Chapter5\\deposits.txt"
                 );
 
         // read data from the specified file.
@@ -30,7 +30,7 @@ public class DepositAndWithdrawalFiles {
         inFile =
                 HelpfulMethodsForFileIO.returnScannerToReadFromSpecifiedFile(
                         "C:\\Users\\benja\\IdeaProjects\\StartingOutWithJava" +
-                                "\\TextFiles\\Chapter5\\withdrawals.txt"
+                                "\\ChapterSpecificFiles\\Chapter5\\withdrawals.txt"
                 );
 
         // read in data from 'withdrawals.txt'

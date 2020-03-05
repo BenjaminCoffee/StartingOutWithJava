@@ -18,7 +18,7 @@ public class PersonalWebPageGenerator {
         // and writing to a new html file in 'TextFiles' > 'Chapter5'.
         PrintWriter toFile = HelpfulMethodsForFileIO.createNewFileAndWriteToIt(
                 "C:\\Users\\benja\\IdeaProjects\\" +
-                        "StartingOutWithJava\\TextFiles\\Chapter5",
+                        "StartingOutWithJava\\ChapterSpecificFiles\\Chapter5",
                 "personalWebPage.html"
         );
 
