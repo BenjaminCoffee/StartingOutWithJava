@@ -21,14 +21,67 @@ public class SlotMachine {
         // return the generated number to a method
         // with a switch statement that returns one of the
         // words, 'Cherries', 'Oranges', etc.
+
         // compare each word to the previously generated word
         // if(word.matches(word) - add a point.
 
         // if 0 points, - no money
         // if 1 point, - double money
         // if 2 points, - triple the money, etc.
+        calculateWinnings(calculateNumOfSymbolMatches());
+        System.out.println("Your total: $"+ getMoney());
+
+    }
+
+    public void calculateWinnings(int numOfMatches) {
+        switch (numOfMatches) {
+            case 0 :
+                setMoney(getMoney());
+                break;
+            case 1 :
+                setMoney(getMoney() * 2);
+                break;
+            case 2 :
+                setMoney(getMoney() * 3);
+                break;
+        }
+    }
+
+    public int calculateNumOfSymbolMatches() {
+        String[] symbolArray = new String[3];
+        String[] panelArray = {"Cherries", "Oranges", "Plums", "Bells", "Melons", "Bars"};
+        int counter = 0;
+        int score = 0;
+
+        for (int i = 0; i < 3; i++) {
+            symbolArray[i] = returnASymbol(returnRandomNumBetweenOneAndFive());
+            System.out.println(symbolArray[i]);
+        }
 
 
+        for (int i = 0; i < panelArray.length; i++) {
+            // reset the counter to zero to test each index of the panel array.
+            counter = 0;
+            for (int j = 0; j < symbolArray.length; j++) {
+
+                if (panelArray[i].equalsIgnoreCase(symbolArray[j])) {
+                    counter++;
+                }
+            }
+            if (counter == 1) {
+                score = 0;
+            }
+            if (counter == 2) {
+                score = 1;
+                break;
+            }
+            if (counter == 3) {
+                score = 2;
+                break;
+            }
+        }
+
+        return score;
     }
 
     public String returnASymbol(int theRandomNumber) {
@@ -47,12 +100,16 @@ public class SlotMachine {
                 return "Bars";
         }
 
-        return "There was an error in the program.";
+        // let's hope this line of code is never read.
+        System.out.println("There was an error in the returnASymbol method.");
+
+        // or this one.
+        return "";
     }
 
     public int returnRandomNumBetweenOneAndFive() {
         Random randomObj = new Random();
-        int oneThroughFive = randomObj.nextInt(5);
+        int oneThroughFive = randomObj.nextInt(6);
 
         if (oneThroughFive < 0 || oneThroughFive > 5) {
             System.out.println("There has been an error in " +
