@@ -1,4 +1,4 @@
-package Chapter2;
+package chapter2;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;

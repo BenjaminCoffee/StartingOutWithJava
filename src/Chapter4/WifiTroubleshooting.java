@@ -1,6 +1,6 @@
-package Chapter4;
+package chapter4;
 
-import Chapter2.AskUserForInput;
+import chapter2.AskUserForInput;
 
 import java.util.Scanner;
 

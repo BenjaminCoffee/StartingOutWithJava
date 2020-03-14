@@ -1,4 +1,4 @@
-package Chapter5;
+package chapter5;
 
 /**
  * Entry point to application

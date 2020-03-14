@@ -1,8 +1,6 @@
-package Chapter4;
+package chapter4;
 
-import Chapter2.AskUserForInput;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import chapter2.AskUserForInput;
 
 public class MagicDates {
     private int month;

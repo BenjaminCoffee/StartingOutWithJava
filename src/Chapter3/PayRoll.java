@@ -1,6 +1,6 @@
-package Chapter3;
+package chapter3;
 
-import Chapter2.AskUserForInput;
+import chapter2.AskUserForInput;
 
 public class PayRoll {
     private String name;

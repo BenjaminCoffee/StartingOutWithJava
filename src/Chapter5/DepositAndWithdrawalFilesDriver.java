@@ -1,6 +1,5 @@
-package Chapter5;
+package chapter5;
 
-import javax.imageio.IIOException;
 import java.io.IOException;
 
 public class DepositAndWithdrawalFilesDriver {

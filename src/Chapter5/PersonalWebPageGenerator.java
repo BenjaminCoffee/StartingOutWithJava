@@ -1,11 +1,10 @@
-package Chapter5;
+package chapter5;
 
-import Chapter2.AskUserForInput;
+import chapter2.AskUserForInput;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Scanner;
 
 public class PersonalWebPageGenerator {
     private String info;
@@ -15,10 +14,10 @@ public class PersonalWebPageGenerator {
             throws IOException, FileNotFoundException {
 
         // create a PrintWriter object capable of creating
-        // and writing to a new html file in 'TextFiles' > 'Chapter5'.
+        // and writing to a new html file in 'TextFiles' > 'chapter5'.
         PrintWriter toFile = HelpfulMethodsForFileIO.createNewFileAndWriteToIt(
                 "C:\\Users\\benja\\IdeaProjects\\" +
-                        "StartingOutWithJava\\ChapterSpecificFiles\\Chapter5",
+                        "StartingOutWithJava\\ChapterSpecificFiles\\chapter5",
                 "personalWebPage.html"
         );
 

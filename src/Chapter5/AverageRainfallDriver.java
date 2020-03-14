@@ -1,4 +1,4 @@
-package Chapter5;
+package chapter5;
 
 public class AverageRainfallDriver {
     public static void main(String[] args) {

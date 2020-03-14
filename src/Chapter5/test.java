@@ -1,12 +1,11 @@
-package Chapter5;
+package chapter5;
 
-import Chapter2.AskUserForInput;
+import chapter2.AskUserForInput;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Test {
@@ -91,7 +90,7 @@ public class Test {
         // create a file object to reference the testTextFile.
         File theTestTextFile = new File(
                 "C:\\Users\\benja\\IdeaProjects\\" +
-                        "StartingOutWithJava\\TextFiles\\Chapter5\\testTextFile");
+                        "StartingOutWithJava\\TextFiles\\chapter5\\testTextFile");
 
         // Creating a FileWriter object so the file can be appended to without
         // being deleted.
@@ -326,7 +325,7 @@ public class Test {
         // create a file object to specify a folder.
         File dirName = new File(
                 "C:\\Users\\benja\\IdeaProjects" +
-                        "\\StartingOutWithJava\\ChapterSpecificFiles\\Chapter5");
+                        "\\StartingOutWithJava\\ChapterSpecificFiles\\chapter5");
         // if the specified directory does not exist, the program will terminate.
         if(!dirName.exists()) {
             System.out.println("The specified directory path does not exist.");

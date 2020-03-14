@@ -1,6 +1,4 @@
-package Chapter5;
-
-import Chapter2.AskUserForInput;
+package chapter5;
 
 public class OrganismPopulationDriver {
     public static void main(String[] args) {

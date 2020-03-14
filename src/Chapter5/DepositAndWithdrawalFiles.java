@@ -1,4 +1,4 @@
-package Chapter5;
+package chapter5;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -14,7 +14,7 @@ public class DepositAndWithdrawalFiles {
         Scanner inFile =
                 HelpfulMethodsForFileIO.returnScannerToReadFromSpecifiedFile(
                         "C:\\Users\\benja\\IdeaProjects\\StartingOutWithJava" +
-                                "\\ChapterSpecificFiles\\Chapter5\\deposits.txt"
+                                "\\ChapterSpecificFiles\\chapter5\\deposits.txt"
                 );
 
         // read data from the specified file.
@@ -30,7 +30,7 @@ public class DepositAndWithdrawalFiles {
         inFile =
                 HelpfulMethodsForFileIO.returnScannerToReadFromSpecifiedFile(
                         "C:\\Users\\benja\\IdeaProjects\\StartingOutWithJava" +
-                                "\\ChapterSpecificFiles\\Chapter5\\withdrawals.txt"
+                                "\\ChapterSpecificFiles\\chapter5\\withdrawals.txt"
                 );
 
         // read in data from 'withdrawals.txt'

@@ -1,6 +1,6 @@
-package Chapter5;
+package chapter5;
 
-import Chapter2.AskUserForInput;
+import chapter2.AskUserForInput;
 
 /**
  * This class asks the user for an integer and ensures the number is

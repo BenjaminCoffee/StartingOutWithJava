@@ -1,6 +1,5 @@
-package Chapter5;
+package chapter5;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,7 +13,7 @@ public class TestingFileIOMethods {
         PrintWriter createAndWriteToTestDotTxt =
                 HelpfulMethodsForFileIO.createNewFileAndWriteToIt
                 ("C:\\Users\\benja\\IdeaProjects" +
-                                "\\StartingOutWithJava\\ChapterSpecificFiles\\Chapter5",
+                                "\\StartingOutWithJava\\ChapterSpecificFiles\\chapter5",
                         "test.txt");
         createAndWriteToTestDotTxt.println("What up?");
         createAndWriteToTestDotTxt.close();
@@ -23,7 +22,7 @@ public class TestingFileIOMethods {
         PrintWriter appendToTestingFileAppendingMethodDotTxt =
                 HelpfulMethodsForFileIO.appendToExistingFile(
                         "C:\\Users\\benja\\IdeaProjects" +
-                                "\\StartingOutWithJava\\ChapterSpecificFiles\\Chapter5" +
+                                "\\StartingOutWithJava\\ChapterSpecificFiles\\chapter5" +
                                 "\\testingFileAppendingMethod.txt");
         appendToTestingFileAppendingMethodDotTxt.println("This line should" +
                 " be appended to the bottom.");
@@ -36,7 +35,7 @@ public class TestingFileIOMethods {
                         returnScannerToReadFromSpecifiedFile(
                                 "C:\\Users\\benja\\IdeaProjects" +
                                         "\\StartingOutWithJava\\ChapterSpecificFiles" +
-                                        "\\Chapter5\\numberList.txt");
+                                        "\\chapter5\\numberList.txt");
         System.out.println(readFromFile.nextLine());
     }
 }

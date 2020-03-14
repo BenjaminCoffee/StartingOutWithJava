@@ -1,6 +1,4 @@
-package Chapter3;
-
-import Chapter2.AskUserForInput;
+package chapter3;
 
 public class EmployeeDriver {
     //driver

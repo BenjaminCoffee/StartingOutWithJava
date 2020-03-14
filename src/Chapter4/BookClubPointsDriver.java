@@ -1,4 +1,4 @@
-package Chapter4;
+package chapter4;
 
 public class BookClubPointsDriver {
     public static void main(String[] args) {

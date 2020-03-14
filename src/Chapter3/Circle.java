@@ -1,4 +1,4 @@
-package Chapter3;
+package chapter3;
 
 public class Circle {
     private final double PI = 3.14159;

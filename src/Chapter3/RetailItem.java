@@ -1,4 +1,4 @@
-package Chapter3;
+package chapter3;
 
 public class RetailItem {
     private String description;

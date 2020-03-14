@@ -1,6 +1,6 @@
-package Chapter5;
+package chapter5;
 
-import Chapter2.AskUserForInput;
+import chapter2.AskUserForInput;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -31,7 +31,7 @@ public class DistanceTraveled {
             throws FileNotFoundException {
         writeToDistanceTraveledDotTxt(
                 "C:\\Users\\benja\\IdeaProjects" +
-                        "\\StartingOutWithJava\\TextFiles\\Chapter5",
+                        "\\StartingOutWithJava\\TextFiles\\chapter5",
                 "distanceTraveled.txt");
     }
     // This method was added as part of Programming Challenge #3.
