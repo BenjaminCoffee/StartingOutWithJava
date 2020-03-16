@@ -41,6 +41,22 @@ public class RetailItem {
         this.cost = cost;
     }
 
+    public void setCostWholeSale(double wholeSale) {
+        this.cost.setRetail(wholeSale);
+    }
+
+    public double getCostWholeSale() {
+        return cost.getWholeSale();
+    }
+
+    public void setCostRetail(double retail) {
+        this.cost.setRetail(retail);
+    }
+
+    public double getCostRetail() {
+        return cost.getRetail();
+    }
+
     @Override
     public String toString() {
         return "RetailItem{" +
@@ -57,6 +73,22 @@ public class RetailItem {
 
         public CostData(double wholeSale, double retail) {
             this.wholeSale = wholeSale;
+            this.retail = retail;
+        }
+
+        public double getWholeSale() {
+            return wholeSale;
+        }
+
+        public void setWholeSale(double wholeSale) {
+            this.wholeSale = wholeSale;
+        }
+
+        public double getRetail() {
+            return retail;
+        }
+
+        public void setRetail(double retail) {
             this.retail = retail;
         }
 
