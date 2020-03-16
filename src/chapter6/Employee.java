@@ -6,11 +6,28 @@ public class Employee {
     private String position;
     private int idNumber;
 
+    // Added as part of programming challenge #6
     public Employee(String name, String department, String position, int idNumber) {
         this.name = name;
         this.department = department;
         this.position = position;
         this.idNumber = idNumber;
+    }
+
+    // Added as part of programming challenge #6
+    public Employee(String name, int idNumber) {
+        this.name = name;
+        this.idNumber = idNumber;
+        this.department = "";
+        this.position = "";
+    }
+
+    // Added as part of programming challenge #6
+    public Employee() {
+        this.name = "";
+        this.department = "";
+        this.position = "";
+        this.idNumber = 0;
     }
 
     @Override
