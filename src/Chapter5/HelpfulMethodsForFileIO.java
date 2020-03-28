@@ -6,6 +6,15 @@ import java.io.*;
 import java.util.Scanner;
 
 public class HelpfulMethodsForFileIO {
+
+    /**
+     * returns a Scanner object equipped to read from a specific,
+     * pre-existing, file.
+     * @param filePath
+     * @return
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
     public static Scanner
     returnScannerToReadFromSpecifiedFile(String filePath)
     throws FileNotFoundException, IOException{
@@ -19,8 +28,16 @@ public class HelpfulMethodsForFileIO {
         // Now we return a new Scanner object equipped to
         // read data from the specified file.
         return new Scanner(theFile);
-
     }
+
+    /**
+     * returns a PrintWriter object equipped to append data to a specific,
+     * pre-existing file.
+     * @param filePath
+     * @return
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
     public static PrintWriter
     appendToExistingFile(String filePath)
             throws FileNotFoundException, IOException {
@@ -42,6 +59,14 @@ public class HelpfulMethodsForFileIO {
         return new PrintWriter(fileWriterObject);
     }
 
+    /**
+     * returns a PrintWriter object equipped only to create and write to a
+     * new file in a specified directory.
+     * @param dirPath
+     * @param newFileName
+     * @return
+     * @throws FileNotFoundException
+     */
     public static PrintWriter
     createNewFileAndWriteToIt(String dirPath, String newFileName)
             throws FileNotFoundException {
@@ -65,6 +90,12 @@ public class HelpfulMethodsForFileIO {
         // a PrintWriter object is returned ready to write to the newly created file.
         return new PrintWriter(theFile);
     }
+
+    /**
+     * checks if the file exists or not.
+     * Terminates the program if it does not exist.
+     * @param theFile
+     */
     public static void doesTheFileExist(File theFile){
         if (!theFile.exists()) {
             System.out.println("The specified file does not exist.");
@@ -75,6 +106,11 @@ public class HelpfulMethodsForFileIO {
         }
     }
 
+    /**
+     * checks if the directory path exists or not.
+     * Terminates the program if it does not exist.
+     * @param theDirectory
+     */
     public static void doesTheDirectoryExist(File theDirectory) {
         if(!theDirectory.exists()) {
             Scanner keyboard = new Scanner(System.in);
@@ -84,6 +120,14 @@ public class HelpfulMethodsForFileIO {
             System.exit(0);
         }
     }
+
+    /**
+     * alerts the user to the file path already being in existence.
+     * Asks the user whether or not to proceed with replacing the file.
+     * If they do not want to proceed, the program will terminate.
+     * If they do want to proceed, the pre-existing file will be replaced.
+     * @param theFile
+     */
     public static void doesTheFileAlreadyExist(File theFile) {
 
         if(theFile.exists()) {
