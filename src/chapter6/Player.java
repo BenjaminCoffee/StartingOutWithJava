@@ -12,7 +12,7 @@ public class Player {
     }
 
     public Player() {
-        this.setPoints(25);
+        this.setPoints(50);
     }
 
     public int rollTheDice() {

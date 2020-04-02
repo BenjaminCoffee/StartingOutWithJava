@@ -40,13 +40,13 @@ public class FirstToOneGame {
             return true;
         } else if (player1.getPoints() == 1) {
             System.out.println(player1.getIdentifier() + ", "+
-                    player1.getName()+ ", "+
+                    player1.getName()+ ","+
                     " has won the game!");
             return true;
         }
         else if(player2.getPoints() == 1) {
             System.out.println(player2.getIdentifier() + ", "+
-                    player2.getName()+ ", "+
+                    player2.getName()+ ","+
                     " has won the game!");
             return  true;
         }
@@ -61,6 +61,7 @@ public class FirstToOneGame {
         str.append(player.getRoll());
         str.append(" Score = ");
         str.append(player.getPoints());
+        str.append("\n");
 
         return str.toString();
     }
@@ -165,5 +166,5 @@ public class FirstToOneGame {
 
      */
     //endregion
-    
+
 }
