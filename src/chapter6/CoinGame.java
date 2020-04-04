@@ -46,7 +46,6 @@ public class CoinGame {
                 break;
             }
         }
-
     }
 
     public boolean isThereAWinner(CoinGamePlayer player1, CoinGamePlayer player2) {
