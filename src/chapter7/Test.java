@@ -4,6 +4,7 @@ import chapter2.AskUserForInput;
 
 public class Test {
     public static void main(String[] args) {
+        /*
         // 7.1
         int[] employeeNumbers = new int[100];
 
@@ -38,11 +39,11 @@ public class Test {
         }
 
         // 7.11
-        /*
+
         int answer = AskUserForInput.askUserForPositiveInteger("Enter the size of the array");
         int[] arr = new int[answer];
 
-         */
+
 
         // 7.12
         final int ARRAY_SIZE = 7;
@@ -81,9 +82,37 @@ public class Test {
             recArray[i] = new Rectangle(3, 7);
         }
 
+        */
 
-
+        int[] arr = new int[]{10, 2, 4, 1};
+        selectionSort(arr);
+        for (int var : arr) {
+            System.out.println(var);
+        }
+        
     }
+
+
+    public static void selectionSort(int[] array) {
+        int startScan, index, minIndex, minValue;
+
+        for (startScan = 0; startScan < (array.length - 1); startScan++) {
+            minIndex = startScan;
+            minValue = array[startScan];
+
+            for (index = startScan + 1; index < array.length; index++) {
+                if (array[index] < minValue) {
+                    minValue = array[index];
+                    minIndex = index;
+                }
+            }
+
+            array[minIndex] = array[startScan];
+            array[startScan] = minValue;
+        }
+    }
+
+
 
 
 
