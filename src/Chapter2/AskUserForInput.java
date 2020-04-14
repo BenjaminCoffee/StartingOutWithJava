@@ -215,6 +215,19 @@ public class AskUserForInput {
 
         return aDouble;
     }
+
+    public static double askUserForDouble(double minimum, String userPrompt) {
+        String aString;
+        double aDouble;
+
+        do {
+            aDouble = askForDouble(minimum, userPrompt);
+            aString = confirmationForDouble(aDouble);
+        }while(aString.equalsIgnoreCase("N"));
+        System.out.println("Thank you!");
+
+        return aDouble;
+    }
     public static double askUserForPositiveDouble(String userPrompt) {
         String aString;
         double aDouble;
@@ -382,6 +395,30 @@ public class AskUserForInput {
         return anInt;
     }
 
+    public static double askForDouble(double minimum, String userPrompt) {
+        double aDouble = 0;
+        Scanner in = new Scanner(System.in);
+        do {
+            while (true) {
+                prompt(userPrompt);
+                if (in.hasNextDouble()) {
+                    aDouble = in.nextDouble();
+                    break;
+                } else {
+                    in.nextLine();
+                    System.out.println("You did not enter an integer.");
+                }
+            }
+            if (aDouble < minimum) {
+                System.out.println("You did not enter an integer greater" +
+                        " than or equal to the minimum integer.");
+            }
+        } while (aDouble < minimum);
+        return aDouble;
+    }
+
+    // create a double version of this
+    // and put it where we are in the other method.
     public static int askForInt(int minimum, String userPrompt) {
         int anInt = 0;
         Scanner in = new Scanner(System.in);
