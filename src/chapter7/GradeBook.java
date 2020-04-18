@@ -26,34 +26,54 @@ public class GradeBook {
             str.append((names.get(i)) + " average test score = ");
             totalPoints = 0;
             if (i == 0) {
+                double lowest = student1Scores[0];
                 for (int j = 0; j < student1Scores.length; j++) {
+                    if (student1Scores[j] < lowest) {
+                        lowest = student1Scores[j];
+                    }
                     totalPoints = totalPoints + student1Scores[j];
                 }
-                str.append(calculateLetter(totalPoints / 4) + "\n");
+                str.append(calculateLetter((totalPoints - lowest) / 3) + "\n");
             }
             if (i == 1) {
+                double lowest = student2Scores[0];
                 for (int j = 0; j < student2Scores.length; j++) {
+                    if (student2Scores[j] < lowest) {
+                        lowest = student2Scores[j];
+                    }
                     totalPoints = totalPoints + student2Scores[j];
                 }
-                str.append(calculateLetter(totalPoints / 4) + "\n");
+                str.append(calculateLetter((totalPoints - lowest) / 3) + "\n");
             }
             if (i == 2) {
+                double lowest = student3Scores[0];
                 for (int j = 0; j < student3Scores.length; j++) {
+                    if (student3Scores[j] < lowest) {
+                        lowest = student3Scores[j];
+                    }
                     totalPoints = totalPoints + student3Scores[j];
                 }
-                str.append(calculateLetter(totalPoints / 4) + "\n");
+                str.append(calculateLetter((totalPoints - lowest) / 3) + "\n");
             }
             if (i == 3) {
+                double lowest = student4Scores[0];
                 for (int j = 0; j < student4Scores.length; j++) {
+                    if (student4Scores[j] < lowest) {
+                        lowest = student4Scores[j];
+                    }
                     totalPoints = totalPoints + student4Scores[j];
                 }
-                str.append(calculateLetter(totalPoints / 4) + "\n");
+                str.append(calculateLetter((totalPoints - lowest) / 3) + "\n");
             }
             if (i == 4) {
+                double lowest = student5Scores[0];
                 for (int j = 0; j < student5Scores.length; j++) {
+                    if (student5Scores[j] < lowest) {
+                        lowest = student5Scores[j];
+                    }
                     totalPoints = totalPoints + student5Scores[j];
                 }
-                str.append(calculateLetter(totalPoints / 4) + "\n");
+                str.append(calculateLetter((totalPoints - lowest) / 3) + "\n");
             }
         }
         return str.toString();
