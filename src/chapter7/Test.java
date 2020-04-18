@@ -2,8 +2,13 @@ package chapter7;
 
 import chapter2.AskUserForInput;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Test {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         /*
         // 7.1
         int[] employeeNumbers = new int[100];
@@ -84,11 +89,35 @@ public class Test {
 
         */
 
+        /*
         int[] arr = new int[]{10, 2, 4, 1};
         selectionSort(arr);
         for (int var : arr) {
             System.out.println(var);
         }
+
+         */
+        Scanner sentence = new Scanner(new File("chapterSpecificFiles/chapter7/8_ball_responses"));
+        ArrayList<String> sentenceList = new ArrayList<String>();
+
+        while (sentence.hasNextLine())
+        {
+            sentenceList.add(sentence.nextLine());
+        }
+
+        sentence.close();
+        String[] SENTENCE;
+        String[] sentenceArray = sentenceList.toArray(new String[sentenceList.size()]);
+
+        for (int r = 0; r < sentenceArray.length; r++) {
+            SENTENCE = sentenceArray[r].split("(?<=[.!?])\\s*");
+            for (int i = 0; i < SENTENCE.length; i++) {
+                System.out.println("Sentence " + (i + 1) + ": " + SENTENCE[i]);
+            }
+
+        }
+        // the first row of sentences is SEENTENCE[0]
+        // the second row of SENTENCE is SENTENCE[1]
         
     }
 
