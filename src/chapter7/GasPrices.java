@@ -3,7 +3,6 @@ package chapter7;
 import chapter5.HelpfulMethodsForFileIO;
 import java.io.IOException;
 import java.text.DateFormatSymbols;
-import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
