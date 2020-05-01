@@ -1,0 +1,4 @@
+SALES RECEIPT
+ Subtotal = $250.00
+ Tax = $15.00
+ Total = $265.00
