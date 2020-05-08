@@ -22,10 +22,10 @@ public class AskUserForInput {
         String input;
 
         do {
-            System.out.println("You entered '"+x+"'");
+            System.out.println("You entered '" + x + "'");
             System.out.println("Press 'Y' to confirm or 'N' ro re-enter.");
             input = in.nextLine();
-        }while(input.isEmpty() || input.isBlank() ||
+        } while (input.isEmpty() ||
                 (!(input.equalsIgnoreCase("Y")) &&
                         !(input.equalsIgnoreCase("N"))));
 

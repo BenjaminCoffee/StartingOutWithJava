@@ -14,6 +14,7 @@ public class TriviaGame {
     private Player player1;
     private Player player2;
 
+
     public TriviaGame() throws IOException {
         createPlayers();
         inputQuestionsAndAnswers();
