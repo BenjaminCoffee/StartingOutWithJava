@@ -34,6 +34,16 @@ public class TwoDArrayOperations {
         }
         return size;
     }
+
+    public static int getSize(String[][] twoDArray) {
+        int size = 0;
+        for (int i = 0; i < twoDArray.length; i++) {
+            for (int j = 0; j < twoDArray[i].length; j++) {
+                size++;
+            }
+        }
+        return size;
+    }
     //endregion
 
     //region Get the average of all values in the
