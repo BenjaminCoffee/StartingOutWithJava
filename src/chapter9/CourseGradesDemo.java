@@ -10,7 +10,7 @@ public class CourseGradesDemo {
         example.grades = new GradedActivity[4];
 
         GradedActivity lab = new GradedActivity();
-        lab.setScore(80);
+        lab.setScore(85);
         example.setLab(lab);
 
          // We need a modified GradedActivity object to be referenced by example[1]
@@ -41,10 +41,10 @@ public class CourseGradesDemo {
         // The setScore method now takes the number of questions missed out of a
         // 10 question exam and calculates, the score and passes that score
         // to the super classes 'score' field via the super class' setScore method.
-        example.grades[1].setScore(3);
+        example.grades[1].setScore(2);
 
         // create an Essay object and pass values to it's constructor
-        Essay essay = new Essay(20, 20, 10, 20);
+        Essay essay = new Essay(25, 20, 10, 20);
         // allow grades[2] to reference the newly created Essay object.
         example.setEssay(essay);
 
@@ -61,9 +61,13 @@ public class CourseGradesDemo {
                 super.setScore((totalQuestions - missed) * 2);
             }
         };
-        finalExam.setScore(1);
+        finalExam.setScore(5);
         example.setFinalExam(finalExam);
 
         System.out.println(example.toString());
+        System.out.println(example.getAverage());
+        System.out.println(example.getHighest().getScore());
+        System.out.println(example.getLowest().getScore());
+
     }
 }

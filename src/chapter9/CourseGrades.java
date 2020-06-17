@@ -1,6 +1,6 @@
 package chapter9;
 
-public class CourseGrades {
+public class CourseGrades implements Analyzable {
     GradedActivity[] grades;
 
     public void setLab(GradedActivity lab) {
@@ -17,6 +17,41 @@ public class CourseGrades {
 
     public void setFinalExam(GradedActivity finalExam) {
         grades[3] = finalExam;
+    }
+
+    public double getAverage() {
+        double total = 0;
+        for (int i = 0; i < grades.length; i++) {
+            total = total + grades[i].getScore();
+        }
+
+        return total / grades.length;
+    }
+
+    public GradedActivity getHighest() {
+        double highestScore = grades[0].getScore();
+        int index = 0;
+
+        for (int i = 0; i < grades.length; i++) {
+            if (grades[i].getScore() > highestScore) {
+                highestScore = grades[i].getScore();
+                index = i;
+            }
+        }
+        return grades[index];
+    }
+
+    public GradedActivity getLowest() {
+        double lowestScore = grades[0].getScore();
+        int index = 0;
+
+        for (int i = 0; i < grades.length; i++) {
+            if (grades[i].getScore() < lowestScore) {
+                lowestScore = grades[i].getScore();
+                index = i;
+            }
+        }
+        return grades[index];
     }
 
     public String toString() {
