@@ -17,7 +17,12 @@ public class ProductionWorker extends Employee {
     }
 
     public void setShift(int shift) {
-        this.shift = shift;
+        if (shift == 0 || shift == 1) {
+            this.shift = shift;
+        } else {
+            System.out.println("invalid input for shift. " +
+                    "shift field not set.");
+        }
     }
 
     public double getPayRate() {

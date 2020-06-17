@@ -1,5 +1,7 @@
 package chapter9;
 
+import java.util.regex.Pattern;
+
 public class Employee {
     private String name;
     private String employeeNumber;
@@ -22,7 +24,13 @@ public class Employee {
     }
 
     public void setEmployeeNumber(String employeeNumber) {
-        this.employeeNumber = employeeNumber;
+        if (Pattern.matches("[0-9][0-9][0-9]-[A-M]", employeeNumber)) {
+            this.employeeNumber = employeeNumber;
+        }
+        else {
+            System.out.println("Invalid input for employeeNumber field.");
+            System.out.println("employeeNumber field has not been set.");
+        }
     }
 
     public String getHireDate() {
@@ -30,7 +38,12 @@ public class Employee {
     }
 
     public void setHireDate(String hireDate) {
-        this.hireDate = hireDate;
+        if (Pattern.matches("[0-12]-[0-31]-[2][0-9][0-9][0-9]", hireDate)) {
+            this.hireDate = hireDate;
+        } else {
+            System.out.println("Invalid input for hire date. " +
+                    "hireDate field not set.");
+        }
     }
 
     @Override
@@ -41,5 +54,5 @@ public class Employee {
                 ", hireDate='" + hireDate + '\'' +
                 '}';
     }
-    
+
 }
